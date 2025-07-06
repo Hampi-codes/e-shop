@@ -30,7 +30,7 @@ Follow the steps below to set up and run the application locally.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/e-shop.git
+git clone https://github.com/Hampi-codes/e-shop.git
 cd e-shop
 ```
 ### 2. Install Dependencies
