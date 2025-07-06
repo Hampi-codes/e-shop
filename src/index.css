@@ -46,6 +46,13 @@ body {
   background-color: #7e6d64;
 }
 
+.ant-select-selector {
+  align-items: center;
+  .ant-select-selection-wrap {
+    align-self: center;
+  }
+}
+
 @media screen and (max-width: 450px) {
   ::-webkit-scrollbar {
     width: 0px;
