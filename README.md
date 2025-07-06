@@ -1,69 +1,101 @@
-# React + TypeScript + Vite
+# 🛍️ E-Shop – React + TypeScript + Vite E-Commerce Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal yet functional e-commerce web application where users can browse products, view detailed information, and manage their shopping cart — all built with modern frontend technologies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React** with **Functional Components**
+- **TypeScript**
+- **Vite** – for lightning-fast development
+- **Ant Design** – sleek and responsive UI
+- **React Router** – for client-side navigation
+- **localStorage** + **Context API** – for global cart state management
+- **Cypress** – for end-to-end testing
+- **FakestoreAPI** – for product and category data
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🔧 Getting Started
+
+Follow the steps below to set up and run the application locally.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/e-shop.git
+cd e-shop
+
+2. Install Dependencies
+npm install
+
+3. Start the Development Server
+npm run dev
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧪 Testing (E2E with Cypress)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Used Cypress to test key user flows such as:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Browsing product list
+2. Viewing product details
+3. Adding items to the cart
+4. Updating cart quantities
+5. Navigating between pages
+
+## Run Tests
+
+```bash
+npx cypress run
 ```
+
+🎯 Features
+✅ Home Page (Product Listing)
+1. Displays a grid of products
+
+2. Filters products by category using dynamic API fetching
+
+3. Responsive design with scrollable container
+
+✅ Product Details Page
+1. Uses dynamic routing to show product info
+
+2. Displays image, title, description, price
+
+3. “Add to Cart” functionality
+
+✅ Cart Page
+1. Displays items added to the cart
+
+2. Quantity controls using "+" and "–" buttons
+
+3. Shows total cart value
+
+4. Responsive and scrollable layout
+
+✅ Navigation
+1. Seamless routing between Home, Product Details, and Cart
+
+2. "Back" button navigation handled via router
+
+
+🧩 API
+All product and category data is fetched using:
+👉 https://fakestoreapi.com/
+
+Filters are server-driven, not local
+
+Query parameters used to fetch filtered data
+
+👨‍💻 Author
+Yogesh
+Frontend Developer
+LinkedIn | Portfolio
