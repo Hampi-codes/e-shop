@@ -1,13 +1,12 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useProductDetail } from "../services/useProductDetail";
-import { Spin, Typography, Card, Image } from "antd";
+import { Spin, Typography, Card, Image, Row, Col } from "antd";
 import { backIcon } from "../assets";
 import AddToCartButton from "../components/addToCartButton";
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams();
-  // const { addToCart } = useCart();
   const navigate = useNavigate();
   const { product, loading } = useProductDetail(id);
 
@@ -16,11 +15,12 @@ const ProductDetail: React.FC = () => {
   return (
     <div>
       <img
+        data-testid="back-button"
         src={backIcon}
         alt={"Back"}
         role="button"
         onClick={() => navigate(-1)}
-        style={{ width: 50, height: 50, cursor: "pointer" }}
+        style={{ width: 32, height: 32, cursor: "pointer" }}
       />
 
       <Card style={{ maxWidth: 600, margin: "0 auto" }} loading={loading}>
@@ -37,14 +37,24 @@ const ProductDetail: React.FC = () => {
             style={{ height: 300, objectFit: "contain" }}
           />
         </div>
-        <Typography.Title level={4} style={{ marginTop: 16 }}>
+        <Typography.Title
+          level={4}
+          style={{ marginTop: 16 }}
+          data-testid="product-title"
+        >
           {product.title}
         </Typography.Title>
-        <Typography.Paragraph>{product.description}</Typography.Paragraph>
-        <Typography.Text strong>
+        <Typography.Paragraph data-testid="product-description">
+          {product.description}
+        </Typography.Paragraph>
+        <Typography.Text strong data-testid="product-price">
           Price: ₹{product.price.toFixed(2)}
         </Typography.Text>
-        <AddToCartButton product={product} />
+        <Row justify="end">
+          <Col xs={24} md={12} xl={8} xxl={6}>
+            <AddToCartButton product={product} />
+          </Col>
+        </Row>
       </Card>
     </div>
   );

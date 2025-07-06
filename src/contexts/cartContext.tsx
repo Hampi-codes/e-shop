@@ -17,14 +17,10 @@ const CartContext = createContext<CartContextType | null>(null);
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [cart, setCart] = useState<CartItem[]>([]);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("cart");
-    if (stored) {
-      setCart(JSON.parse(stored));
-    }
-  }, []);
+  const stored = localStorage.getItem("cart");
+  const [cart, setCart] = useState<CartItem[]>(
+    stored ? JSON.parse(stored) : []
+  );
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -46,13 +42,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const removeFromCart = (id: number) => {
-    setCart(
-      (prev) =>
-        prev
-          .map((item) =>
-            item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-          )
-          .filter((item) => item.quantity > 0)
+    setCart((prev) =>
+      prev
+        .map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter((item) => item.quantity > 0)
     );
   };
 

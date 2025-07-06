@@ -22,6 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <Card
+      data-testid="product-card"
       hoverable
       style={{ width: "100%", marginBottom: 16 }}
       cover={
@@ -32,16 +33,22 @@ const ProductCard: React.FC<ProductCardProps> = ({
         />
       }
     >
-      <Card.Meta title={title} description={`₹${price.toFixed(2)}`} />
+      <Card.Meta
+        data-testid="product-title"
+        title={title}
+        description={
+          <span data-testid="product-price">₹{price.toFixed(2)}</span>
+        }
+      />
       <Row gutter={[8, 8]} style={{ marginTop: 12 }}>
-        <Col span={16} xs={12} md={14} lg={16} xxl={18}>
+        <Col span={16} xs={12} lg={14} xxl={18}>
           <Link to={`/product/${id}/details`}>
-            <Button type="primary" block>
+            <Button type="primary" block data-testid="view-details-button">
               View Details
             </Button>
           </Link>
         </Col>
-        <Col span={8} xs={12} md={10} lg={8} xxl={6}>
+        <Col span={8} xs={12} lg={10} xxl={6}>
           <AddToCartButton
             product={{ id, title, image, price, category, description }}
           />
