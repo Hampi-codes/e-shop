@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Button, Row, Col } from "antd";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AddToCartButton from "./addToCartButton";
 
 interface ProductCardProps {
@@ -20,10 +20,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   category,
   description,
 }) => {
+  const navigvate = useNavigate();
   return (
     <Card
       data-testid="product-card"
-      hoverable
       style={{ width: "100%", marginBottom: 16 }}
       cover={
         <img
@@ -42,11 +42,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
       />
       <Row gutter={[8, 8]} style={{ marginTop: 12 }}>
         <Col span={16} xs={12} lg={14} xxl={18}>
-          <Link to={`/product/${id}/details`}>
-            <Button type="primary" block data-testid="view-details-button">
-              View Details
-            </Button>
-          </Link>
+          <Button
+            type="primary"
+            block
+            data-testid="view-details-button"
+            onClick={(e) => {
+              e.stopPropagation();
+              navigvate(`/product/${id}/details`);
+            }}
+          >
+            View Details
+          </Button>
         </Col>
         <Col span={8} xs={12} lg={10} xxl={6}>
           <AddToCartButton

@@ -19,7 +19,10 @@ const AddToCartButton: React.FC<Props> = ({ product }) => {
     return (
       <Button
         data-testid="add-to-cart-button"
-        onClick={handleAdd}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleAdd();
+        }}
         style={{
           border: "2px solid #ff007a",
           color: "#ff007a",
@@ -44,7 +47,10 @@ const AddToCartButton: React.FC<Props> = ({ product }) => {
     >
       <Button
         data-testid="decrease-qty"
-        onClick={handleRemove}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleRemove();
+        }}
         style={{
           backgroundColor: "#ff007a",
           color: "#fff",
@@ -69,7 +75,10 @@ const AddToCartButton: React.FC<Props> = ({ product }) => {
       </Button>
       <Button
         data-testid="increase-qty"
-        onClick={handleAdd}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleAdd();
+        }}
         style={{
           backgroundColor: "#ff007a",
           color: "#fff",
