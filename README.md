@@ -57,42 +57,41 @@ Used Cypress to test key user flows such as:
 npx cypress run
 ```
 
-🎯 Features
+## 🎯 Features
 
-✅ Home Page (Product Listing)
-1. Displays a grid of products
+### ✅ Home Page (Product Listing)
 
-2. Filters products by category using dynamic API fetching
+- Displays a grid of products  
+- Filters products by category using dynamic API fetching  
+- Responsive design with scrollable container  
 
-3. Responsive design with scrollable container
+### ✅ Product Details Page
 
-✅ Product Details Page
-1. Uses dynamic routing to show product info
+- Uses dynamic routing to show product info  
+- Displays image, title, description, and price  
+- “Add to Cart” functionality  
 
-2. Displays image, title, description, price
+### ✅ Cart Page
 
-3. “Add to Cart” functionality
+- Displays items added to the cart  
+- Quantity controls using "+" and "–" buttons  
+- Shows total cart value  
+- Responsive and scrollable layout  
 
-✅ Cart Page
-1. Displays items added to the cart
+### ✅ Navigation
 
-2. Quantity controls using "+" and "–" buttons
+- Seamless routing between Home, Product Details, and Cart  
+- "Back" button navigation handled via router  
 
-3. Shows total cart value
+---
 
-4. Responsive and scrollable layout
+## 🧩 API
 
-✅ Navigation
-1. Seamless routing between Home, Product Details, and Cart
+All product and category data is fetched using:  
+👉 [https://fakestoreapi.com/](https://fakestoreapi.com/)
 
-2. "Back" button navigation handled via router
-
-
-🧩 API
-All product and category data is fetched using:
-👉 https://fakestoreapi.com/
-1. Filters are server-driven, not local
-2. Query parameters used to fetch filtered data
+- Filters are **server-driven**, not local  
+- Query parameters are used to fetch filtered data
 
 ## 📚 What I Learned During This Assessment
 
