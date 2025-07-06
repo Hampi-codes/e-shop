@@ -49,7 +49,7 @@ const ScrollableProductGrid: React.FC<ScrollableProductGridProps> = ({
       ref={scrollRef}
       onScroll={checkShadows}
       style={{
-        height: `calc(100vh - (${footerHeight}px + 148px))`,
+        height: `calc(100vh - (${footerHeight}px + 156px))`,
         overflowY: "auto",
         padding: 8,
         borderRadius: 8,
