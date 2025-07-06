@@ -125,7 +125,5 @@ Building an e-commerce app helped reinforce several architectural and UI/UX patt
 - Understanding how cart and UI state can be persisted, managed, and tested
 
 
-👨‍💻 Author
-Yogesh
-Frontend Developer
-LinkedIn | Portfolio
+### 👨‍💻 Author
+- Yogesh kumar
