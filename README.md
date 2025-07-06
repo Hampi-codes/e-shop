@@ -4,7 +4,7 @@ A minimal yet functional e-commerce web application where users can browse produ
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Live Demo https://e-shop-ky.netlify.app
 
 >
 
@@ -58,6 +58,7 @@ npx cypress run
 ```
 
 🎯 Features
+
 ✅ Home Page (Product Listing)
 1. Displays a grid of products
 
@@ -90,10 +91,8 @@ npx cypress run
 🧩 API
 All product and category data is fetched using:
 👉 https://fakestoreapi.com/
-
-Filters are server-driven, not local
-
-Query parameters used to fetch filtered data
+1. Filters are server-driven, not local
+2. Query parameters used to fetch filtered data
 
 👨‍💻 Author
 Yogesh
