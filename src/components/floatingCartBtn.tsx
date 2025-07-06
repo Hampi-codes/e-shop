@@ -24,8 +24,14 @@ const FloatingCartButton = () => {
         display: onCart ? "none" : "block",
       }}
     >
-      <Badge count={totalItems} size={badgeSize} offset={badgeOffset} >
+      <Badge
+        count={totalItems}
+        size={badgeSize}
+        offset={badgeOffset}
+        data-testid="cart-badge"
+      >
         <Button
+          data-testid="cart-icon"
           shape="circle"
           size={buttonSize}
           icon={<ShoppingCartOutlined />}

@@ -15,6 +15,7 @@ const ProductDetail: React.FC = () => {
   return (
     <div>
       <img
+        data-testid="back-button"
         src={backIcon}
         alt={"Back"}
         role="button"
@@ -36,11 +37,17 @@ const ProductDetail: React.FC = () => {
             style={{ height: 300, objectFit: "contain" }}
           />
         </div>
-        <Typography.Title level={4} style={{ marginTop: 16 }}>
+        <Typography.Title
+          level={4}
+          style={{ marginTop: 16 }}
+          data-testid="product-title"
+        >
           {product.title}
         </Typography.Title>
-        <Typography.Paragraph>{product.description}</Typography.Paragraph>
-        <Typography.Text strong>
+        <Typography.Paragraph data-testid="product-description">
+          {product.description}
+        </Typography.Paragraph>
+        <Typography.Text strong data-testid="product-price">
           Price: ₹{product.price.toFixed(2)}
         </Typography.Text>
         <Row justify="end">

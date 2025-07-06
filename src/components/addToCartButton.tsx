@@ -18,6 +18,7 @@ const AddToCartButton: React.FC<Props> = ({ product }) => {
   if (!cartItem) {
     return (
       <Button
+        data-testid="add-to-cart-button"
         onClick={handleAdd}
         style={{
           border: "2px solid #ff007a",
@@ -42,6 +43,7 @@ const AddToCartButton: React.FC<Props> = ({ product }) => {
       }}
     >
       <Button
+        data-testid="decrease-qty"
         onClick={handleRemove}
         style={{
           backgroundColor: "#ff007a",
@@ -53,6 +55,7 @@ const AddToCartButton: React.FC<Props> = ({ product }) => {
         icon={<MinusOutlined />}
       />
       <Button
+        data-testid="item-qty"
         disabled
         style={{
           backgroundColor: "#ff007a",
@@ -65,6 +68,7 @@ const AddToCartButton: React.FC<Props> = ({ product }) => {
         {cartItem.quantity}
       </Button>
       <Button
+        data-testid="increase-qty"
         onClick={handleAdd}
         style={{
           backgroundColor: "#ff007a",

@@ -51,6 +51,7 @@ const Cart: React.FC = () => {
         <div style={{ textAlign: "center", marginTop: 80 }}>
           <Empty description="Your cart is empty." />
           <Button
+            data-testid="continue-shopping"
             type="primary"
             style={{ marginTop: 24 }}
             onClick={() => navigate("/")}
@@ -68,6 +69,7 @@ const Cart: React.FC = () => {
         >
           {cart.map((item) => (
             <Card
+              data-testid="cart-item"
               key={item.id}
               style={{ marginBottom: 16 }}
               styles={{ body: { padding: 16 } }}
@@ -106,12 +108,16 @@ const Cart: React.FC = () => {
 
                   <div style={{ marginTop: 8 }}>
                     <Button
+                      data-testid="decrease-qty"
                       icon={<MinusOutlined />}
                       onClick={() => removeFromCart(item.id)}
                       style={{ marginRight: 8 }}
                     />
-                    <span style={{ fontWeight: "bold" }}>{item.quantity}</span>
+                    <span data-testid="item-qty" style={{ fontWeight: "bold" }}>
+                      {item.quantity}
+                    </span>
                     <Button
+                      data-testid="increase-qty"
                       icon={<PlusOutlined />}
                       onClick={() => addToCart(item)}
                       style={{ marginLeft: 8 }}
@@ -125,7 +131,7 @@ const Cart: React.FC = () => {
           <Divider />
 
           <div style={{ textAlign: "right" }}>
-            <Typography.Text strong>
+            <Typography.Text strong data-testid="cart-total">
               Total ({totalItems} items): ₹{totalPrice.toFixed(2)}
             </Typography.Text>
           </div>
