@@ -23,7 +23,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ selected, onChange }) => {
         style={{ width: "100%" }}
         loading={loading}
         allowClear
-        showSearch
+        showSearch={false}
       >
         {categories.map((category) => (
           <Option key={category} value={category}>

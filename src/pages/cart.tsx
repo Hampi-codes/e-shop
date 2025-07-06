@@ -25,15 +25,18 @@ const Cart: React.FC = () => {
   );
 
   return (
-    <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
-      <Space style={{ marginBottom: 16 }}>
+    <div style={{ maxWidth: 800, margin: "0 auto" }}>
+      <Space
+        style={{ marginBottom: 16, alignItems: "center" }}
+        styles={{ item: { display: "flex", alignItems: "center" } }}
+      >
         <img
           src={backIcon}
           alt="Back"
           onClick={() => navigate(-1)}
           style={{
-            width: 50,
-            height: 50,
+            width: 32,
+            height: 32,
             cursor: "pointer",
           }}
         />
@@ -48,6 +51,7 @@ const Cart: React.FC = () => {
         <div style={{ textAlign: "center", marginTop: 80 }}>
           <Empty description="Your cart is empty." />
           <Button
+            data-testid="continue-shopping"
             type="primary"
             style={{ marginTop: 24 }}
             onClick={() => navigate("/")}
@@ -56,9 +60,16 @@ const Cart: React.FC = () => {
           </Button>
         </div>
       ) : (
-        <>
+        <div
+          style={{
+            maxHeight: "calc(100vh - 201px)",
+            overflowY: "auto",
+            paddingRight: 16,
+          }}
+        >
           {cart.map((item) => (
             <Card
+              data-testid="cart-item"
               key={item.id}
               style={{ marginBottom: 16 }}
               styles={{ body: { padding: 16 } }}
@@ -97,12 +108,16 @@ const Cart: React.FC = () => {
 
                   <div style={{ marginTop: 8 }}>
                     <Button
+                      data-testid="decrease-qty"
                       icon={<MinusOutlined />}
                       onClick={() => removeFromCart(item.id)}
                       style={{ marginRight: 8 }}
                     />
-                    <span style={{ fontWeight: "bold" }}>{item.quantity}</span>
+                    <span data-testid="item-qty" style={{ fontWeight: "bold" }}>
+                      {item.quantity}
+                    </span>
                     <Button
+                      data-testid="increase-qty"
                       icon={<PlusOutlined />}
                       onClick={() => addToCart(item)}
                       style={{ marginLeft: 8 }}
@@ -116,11 +131,11 @@ const Cart: React.FC = () => {
           <Divider />
 
           <div style={{ textAlign: "right" }}>
-            <Typography.Text strong>
+            <Typography.Text strong data-testid="cart-total">
               Total ({totalItems} items): ₹{totalPrice.toFixed(2)}
             </Typography.Text>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

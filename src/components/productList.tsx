@@ -66,7 +66,7 @@ const ScrollableProductGrid: React.FC<ScrollableProductGridProps> = ({
     >
       <Row gutter={[16, 16]}>
         {products.map((product) => (
-          <Col xs={24} sm={12} md={8} lg={6} key={product.id}>
+          <Col xs={24} sm={12} md={8} xl={6} key={product.id}>
             <ProductCard
               id={product.id}
               title={product.title}
