@@ -1,13 +1,12 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useProductDetail } from "../services/useProductDetail";
-import { Spin, Typography, Card, Image } from "antd";
+import { Spin, Typography, Card, Image, Row, Col } from "antd";
 import { backIcon } from "../assets";
 import AddToCartButton from "../components/addToCartButton";
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams();
-  // const { addToCart } = useCart();
   const navigate = useNavigate();
   const { product, loading } = useProductDetail(id);
 
@@ -20,7 +19,7 @@ const ProductDetail: React.FC = () => {
         alt={"Back"}
         role="button"
         onClick={() => navigate(-1)}
-        style={{ width: 50, height: 50, cursor: "pointer" }}
+        style={{ width: 32, height: 32, cursor: "pointer" }}
       />
 
       <Card style={{ maxWidth: 600, margin: "0 auto" }} loading={loading}>
@@ -44,7 +43,11 @@ const ProductDetail: React.FC = () => {
         <Typography.Text strong>
           Price: ₹{product.price.toFixed(2)}
         </Typography.Text>
-        <AddToCartButton product={product} />
+        <Row justify="end">
+          <Col xs={24} md={12} xl={8} xxl={6}>
+            <AddToCartButton product={product} />
+          </Col>
+        </Row>
       </Card>
     </div>
   );

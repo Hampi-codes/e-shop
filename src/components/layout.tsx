@@ -20,7 +20,7 @@ const AppLayout = () => {
         }}
         id="footer"
       >
-        E-commerce ©2025 Created by Yogesh with Love ❤
+        E-Shop ©2025 Created by Yogesh with Love ❤
       </Footer>
       <FloatingCartButton />
     </Layout>

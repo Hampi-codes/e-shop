@@ -33,7 +33,14 @@ const AddToCartButton: React.FC<Props> = ({ product }) => {
   }
 
   return (
-    <Space.Compact style={{ backgroundColor: "#ff007a", borderRadius: 8, width: "100%" }}>
+    <Space.Compact
+      style={{
+        backgroundColor: "#ff007a",
+        borderRadius: 8,
+        width: "100%",
+        justifyContent: "space-around",
+      }}
+    >
       <Button
         onClick={handleRemove}
         style={{

@@ -34,14 +34,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
     >
       <Card.Meta title={title} description={`₹${price.toFixed(2)}`} />
       <Row gutter={[8, 8]} style={{ marginTop: 12 }}>
-        <Col span={16} xs={12} md={14} lg={16} xxl={18}>
+        <Col span={16} xs={12} lg={14} xxl={18}>
           <Link to={`/product/${id}/details`}>
             <Button type="primary" block>
               View Details
             </Button>
           </Link>
         </Col>
-        <Col span={8} xs={12} md={10} lg={8} xxl={6}>
+        <Col span={8} xs={12} lg={10} xxl={6}>
           <AddToCartButton
             product={{ id, title, image, price, category, description }}
           />

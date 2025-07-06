@@ -28,7 +28,7 @@ const Home = () => {
         Explore Products
       </Typography.Title>
       <Row>
-        <Col xs={24} sm={24} md={24} lg={12} xl={8} xxl={5}>
+        <Col xs={24} sm={24} md={24} lg={12} xl={8}>
           <FilterBar
             selected={selectedCategories}
             onChange={setSelectedCategories}

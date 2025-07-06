@@ -25,15 +25,18 @@ const Cart: React.FC = () => {
   );
 
   return (
-    <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
-      <Space style={{ marginBottom: 16 }}>
+    <div style={{ maxWidth: 800, margin: "0 auto" }}>
+      <Space
+        style={{ marginBottom: 16, alignItems: "center" }}
+        styles={{ item: { display: "flex", alignItems: "center" } }}
+      >
         <img
           src={backIcon}
           alt="Back"
           onClick={() => navigate(-1)}
           style={{
-            width: 50,
-            height: 50,
+            width: 32,
+            height: 32,
             cursor: "pointer",
           }}
         />
@@ -56,7 +59,13 @@ const Cart: React.FC = () => {
           </Button>
         </div>
       ) : (
-        <>
+        <div
+          style={{
+            maxHeight: "calc(100vh - 201px)",
+            overflowY: "auto",
+            paddingRight: 16,
+          }}
+        >
           {cart.map((item) => (
             <Card
               key={item.id}
@@ -120,7 +129,7 @@ const Cart: React.FC = () => {
               Total ({totalItems} items): ₹{totalPrice.toFixed(2)}
             </Typography.Text>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
