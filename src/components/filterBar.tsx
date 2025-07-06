@@ -20,7 +20,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ selected, onChange }) => {
         maxTagCount="responsive"
         value={selected}
         onChange={onChange}
-        style={{ width: "100%" }}
+        style={{ width: "100%", height: "40px" }}
         loading={loading}
         allowClear
         showSearch={false}
