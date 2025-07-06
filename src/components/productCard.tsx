@@ -1,0 +1,54 @@
+import React from "react";
+import { Card, Button, Row, Col } from "antd";
+import { Link } from "react-router-dom";
+import AddToCartButton from "./addToCartButton";
+
+interface ProductCardProps {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  category: string;
+  description: string;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({
+  id,
+  title,
+  price,
+  image,
+  category,
+  description,
+}) => {
+  return (
+    <Card
+      hoverable
+      style={{ width: "100%", marginBottom: 16 }}
+      cover={
+        <img
+          alt={title}
+          src={image}
+          style={{ height: 200, objectFit: "contain", padding: "1rem" }}
+        />
+      }
+    >
+      <Card.Meta title={title} description={`₹${price.toFixed(2)}`} />
+      <Row gutter={[8, 8]} style={{ marginTop: 12 }}>
+        <Col span={16} xs={12} md={14} lg={16} xxl={18}>
+          <Link to={`/product/${id}/details`}>
+            <Button type="primary" block>
+              View Details
+            </Button>
+          </Link>
+        </Col>
+        <Col span={8} xs={12} md={10} lg={8} xxl={6}>
+          <AddToCartButton
+            product={{ id, title, image, price, category, description }}
+          />
+        </Col>
+      </Row>
+    </Card>
+  );
+};
+
+export default ProductCard;
