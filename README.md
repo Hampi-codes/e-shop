@@ -26,6 +26,7 @@ A minimal yet functional e-commerce web application where users can browse produ
 ## 🔧 Getting Started
 
 Follow the steps below to set up and run the application locally.
+Note* make sure you have latest stable version of Node installed
 
 ### 1. Clone the Repository
 
