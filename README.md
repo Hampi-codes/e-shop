@@ -32,13 +32,14 @@ Follow the steps below to set up and run the application locally.
 ```bash
 git clone https://github.com/your-username/e-shop.git
 cd e-shop
-
-2. Install Dependencies
+```
+### 2. Install Dependencies
+```bash
 npm install
-
-3. Start the Development Server
+```
+### 4. Start the Development Server
+```bash
 npm run dev
-
 ```
 
 ## 🧪 Testing (E2E with Cypress)
